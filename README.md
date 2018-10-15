@@ -1,38 +1,39 @@
-# A Guide to Converting 1.12.1 CensusPlus' Lua Table to a Ruby Object
+# Censusplusreader
 
-Install LUA and use a LUA-based json generator to read CensusPlus' SavedVariables file. Ruby is just a shell that runs the LUA script and captures the generated JSON from stdout.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/censusplusreader`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-## Instructions
+TODO: Delete this and the text above, and describe your gem
 
-Install LUA (>=5.3.5)
-```
-curl -R -O http://www.lua.org/ftp/lua-5.3.5.tar.gz
-tar zxf lua-5.3.5.tar.gz
-cd lua-5.3.5
-make macosx install
-```
+## Installation
 
-Install the LUA package manager, LuaRocks (>= 3.0.3)
-```
-wget https://luarocks.org/releases/luarocks-3.0.3.tar.gz
-tar zxpf luarocks-3.0.3.tar.gz
-cd luarocks-3.0.3
-./configure; sudo make bootstrap
-```
-(You may need to install CMake -- `brew install cmake`)
+Add this line to your application's Gemfile:
 
-Install the LUA library, rapidjson
-```
-luarocks install rapidjson
+```ruby
+gem 'censusplusreader'
 ```
 
-Find path to CensusPlus.lua for 1.12.1 WoW: WoW/WTF/Account/AccName/SavedVariables/CensusPlus.lua
+And then execute:
 
-Use CensusPlusReader
-```
-require 'CensusPlusReader.rb'
+    $ bundle
 
-path = "CensusPlus.lua"
+Or install it yourself as:
 
-data = CensusPlusReader.to_json(path)
-```
+    $ gem install censusplusreader
+
+## Usage
+
+TODO: Write usage instructions here
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/censusplusreader.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
