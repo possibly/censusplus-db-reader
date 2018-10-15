@@ -1,5 +1,11 @@
 # A Guide to Converting 1.12.1 CensusPlus' Lua Table to a Ruby Object
 
+##tl;dr
+
+Install LUA and use a LUA-based json generator to read CensusPlus' SavedVariables file. Ruby is just a shell that runs the LUA script and captures the generated JSON from stdout.
+
+##Instructions
+
 Install LUA (>=5.3.5)
 ```
 curl -R -O http://www.lua.org/ftp/lua-5.3.5.tar.gz
@@ -30,5 +36,5 @@ require 'CensusPlusReader.rb'
 
 path = "CensusPlus.lua"
 
-data = CensusPlusReader.get_data(path)
+data = CensusPlusReader.to_json(path)
 ```
